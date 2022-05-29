@@ -1,0 +1,6 @@
+- name: Clone Git repositories
+  community.general.mas:
+    id: "{{ item.appId }}"
+    state: present
+    upgrade_all: yes
+  with_items: '{{ mac_appstore }}'

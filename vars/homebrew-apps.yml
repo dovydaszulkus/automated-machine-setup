@@ -1,0 +1,28 @@
+---
+homebrew_cask:
+  - docker
+  - visual-studio-code
+  - obsidian
+  - raycast
+  - makemkv
+  - firefox
+  - affinity-photo
+  - affinity-designer
+  - discord
+  - brave-browser
+  - runjs
+  - anki
+  - blender
+  - firefox-developer-edition
+  - google-chrome
+  - visual-studio
+  - alacritty
+  - min
+  - amethyst
+  - postman
+
+homebrew:
+  - mas
+  - dockutil
+  - neovim
+  - yt-dlp

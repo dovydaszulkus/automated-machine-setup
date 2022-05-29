@@ -1,0 +1,13 @@
+- hosts: localhost
+  vars_files:
+    - vars/vscode-extensions.yml
+    - vars/mac-appstore.yml
+    - vars/homebrew-apps.yml
+  tasks:
+    - include: tasks/m1-mac.yml
+    - include: tasks/homebrew.yml
+    - include: tasks/configure-macos.yml
+    - include: tasks/app-store.yml
+    - include: tasks/create-directories.yml
+    - include: tasks/configure-apps.yml
+

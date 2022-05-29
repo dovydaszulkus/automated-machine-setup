@@ -1,0 +1,5 @@
+---
+vscode_extensions:
+  - hashicorp.terraform
+  - rust-lang.rust
+  - davidanson.vscode-markdownlint

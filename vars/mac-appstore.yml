@@ -1,0 +1,7 @@
+---
+mac_appstore:
+  - { appId: 904280696, name: 'Things 3' } # Things 3
+  - { appId: 1549370672, name: 'Save to Raindrop.io' } # Save to raindrop.io
+  - { appId: 1474335294, name: 'GoodLinks' } # GoodLinks
+  - { appId: 497799835, name: 'Xcode' } # Xcode
+  - { appId: 1444383602, name: 'GoodNotes 5' } # GoodNotes 5

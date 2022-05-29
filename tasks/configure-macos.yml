@@ -1,0 +1,39 @@
+- name: Remove all items from the dock
+  shell: dockutil --remove all
+- name: Set the default dock items
+  shell: "dockutil --add {{ item }} --no-restart"
+  async: 30
+  poll: 5
+  with_items:
+    - /System/Applications/Launchpad.app
+    - /Applications/Safari.app
+    - /System/Applications/Mail.app
+    - /System/Applications/Reminders.app
+    - /System/Applications/Notes.app
+    - /System/Applications/Calendar.app
+    - "\"/Applications/Visual Studio Code.app\""
+    - /Applications/Obsidian.app
+    - /Users/dovydaszulkus/Documents/.screenshots
+    - /Users/dovydaszulkus/Downloads
+- name: Set screenshots directory to documents/.screenshots
+  shell: defaults write com.apple.screencapture location /Users/dovydaszulkus/Documents/.screenshots
+- name: Disable "Automatically rearrange Spaces based on most recent use" in Mission Control
+  shell: defaults write com.apple.dock "mru-spaces" -bool "false" && killall Dock
+- name: Disable Ask Siri
+  shell: defaults write com.apple.assistant.support "Assistant Enabled" -bool false && defaults write com.apple.Siri StatusMenuVisible -bool false
+- name: Show file extensions
+  shell: defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+- name: Show hidden files
+  shell: defaults write com.apple.Finder AppleShowAllFiles -bool true
+- name: Show path bar in finder
+  shell: defaults write com.apple.finder ShowPathbar -bool true
+- name: Hide dock
+  shell: defaults write com.apple.dock "autohide" -bool "true"
+- name: Hide menubar
+  shell: defaults write NSGlobalDomain _HIHideMenuBar -bool "true"
+- name: Restart mac services for changes to take effect
+  shell: "{{ item }}"
+  with_items:
+    - killall SystemUIServer
+    - killall Finder
+    - killall Dock
