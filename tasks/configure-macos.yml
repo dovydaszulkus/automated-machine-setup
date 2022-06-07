@@ -31,6 +31,8 @@
   shell: defaults write com.apple.dock "autohide" -bool "true"
 - name: Hide menubar
   shell: defaults write NSGlobalDomain _HIHideMenuBar -bool "true"
+- name: Show Accessibility status in menu bar
+  shell: defaults -currentHost write com.apple.controlcenter AccessibilityShortcuts -int 3
 - name: Restart mac services for changes to take effect
   shell: "{{ item }}"
   with_items:
